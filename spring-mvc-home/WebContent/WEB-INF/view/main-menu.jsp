@@ -22,6 +22,10 @@
 
 <br><br>
 
+<a href="customer/showForm">Customer Form</a>
+
+<br><br>
+
 <img src="${pageContext.request.contextPath}/resources/images/unisys.png" />
 
 <br><br>
