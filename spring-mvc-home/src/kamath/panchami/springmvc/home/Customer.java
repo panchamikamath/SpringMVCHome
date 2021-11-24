@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import kamath.panchami.springmvc.validation.CourseCode;
+
 public class Customer {
 
 	@NotNull(message="FirstName can not be empty or  less than one character!")
@@ -20,6 +22,9 @@ public class Customer {
 	@Min(value=0, message="must be greater than or equal to zero")
 	@Max(value=10, message="must be lesser than or equal to ten")
 	private Integer freePasses;
+	
+	@CourseCode(value={"GK","PK"},message="Courses should start with GK!")
+	private String courseCode;
 	
 	@Pattern(regexp="^[A-za-z0-9]{5}",message="Only 5 characters/digits allowed")
 	private String postalCode;
@@ -47,5 +52,11 @@ public class Customer {
 	}
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+	public String getCourseCode() {
+		return courseCode;
+	}
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 }
